@@ -3,5 +3,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/kwiksendit/',  // for correct asset paths
+  // For a project site with repository name 'kwiksendit'
+  base: '/kwiksendit/',
+  server: {
+    port: 5175,
+  },
 });
