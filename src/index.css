@@ -4,20 +4,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Ensure you include the Google Fonts link in index.html */
   background-color: #f0f2f5;
 }
 
-/* ---------- Layout & Main Container ---------- */
+/* ---------- Layout & Main Containers ---------- */
 .home-page {
-  max-width: 420px;
+  max-width: 420px;       /* For a mobile-like width */
   margin: 0 auto;
   background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
 .content-container,
 .page-content {
   padding: 16px;
@@ -32,18 +34,22 @@ body {
   color: #fff;
   padding: 12px 16px;
 }
+
 .logo {
   font-size: 20px;
   font-weight: bold;
 }
+
 .profile-link {
   text-decoration: none;
 }
+
 .profile-pic {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 /* ---------- Typography ---------- */
@@ -53,67 +59,80 @@ body {
   color: #333;
   margin-bottom: 10px;
 }
+
 .intro-text {
   font-size: 14px;
   color: #666;
   margin-bottom: 30px;
 }
+
 .section-title {
   font-size: 18px;
   margin-bottom: 16px;
   color: #333;
 }
 
-/* ---------- Tiles (Feature Cards) on HomePage ---------- */
+/* ---------- Tiles (Feature Cards) ---------- */
+/* (Used on HomePage if applicable) */
 .tiles {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
   margin-bottom: 30px;
 }
+
 @media (min-width: 600px) {
   .tiles {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 .tile {
   background-color: #f8f9fa;
   padding: 16px;
   border-radius: 8px;
   text-decoration: none;
   color: #333;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .tile:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 .tile-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-/* ---------- Forms (Common Styles) ---------- */
+/* ---------- Form Styles ---------- */
 .form {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 16px;
 }
+
 .form label {
   font-size: 14px;
   color: #333;
   display: flex;
   flex-direction: column;
 }
-.form input {
+
+.form input,
+.form select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 4px;
+  font-size: 14px;
 }
+
+/* Submit Button */
 .submit-button {
   background-color: #007bff;
   color: #fff;
@@ -122,44 +141,13 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 12px;
 }
+
 .submit-button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
-}
-.error {
-  color: #dc3545;
-  font-size: 13px;
-}
-.success-message {
-  color: #28a745;
-  font-size: 13px;
-}
-
-/* ---------- Filter Form (for Transactions) ---------- */
-.filter-form input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-/* ---------- Transactions Table ---------- */
-.transactions-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.transactions-table th,
-.transactions-table td {
-  padding: 8px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-.transactions-table th {
-  background-color: #f8f9fa;
 }
 
 /* ---------- Back Button ---------- */
@@ -170,6 +158,53 @@ body {
   margin-bottom: 16px;
   display: inline-block;
 }
+
 .back-button:hover {
   text-decoration: underline;
+}
+
+/* ---------- Messages ---------- */
+.error {
+  color: #dc3545;
+  font-size: 13px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 13px;
+}
+
+/* ---------- Filter Input (for Transactions) ---------- */
+.filter-input {
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ---------- Transactions Table & Container ---------- */
+.transactions-container {
+  width: 100%;
+  overflow-x: auto;  /* Enable horizontal scrolling */
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  min-width: 600px;  /* Force a minimum width so the table can scroll */
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.transactions-table th {
+  background-color: #f8f9fa;
 }
