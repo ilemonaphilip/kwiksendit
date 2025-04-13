@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
+import BackButton from '../components/BackButton';
 
 function ExchangeRates() {
   const [rate, setRate] = useState(null);

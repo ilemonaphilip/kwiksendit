@@ -107,3 +107,12 @@ body {
   font-weight: 600;
   margin-bottom: 8px;
 }
+.back-button {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}

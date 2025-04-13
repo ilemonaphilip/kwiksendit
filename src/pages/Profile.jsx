@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
+import BackButton from '../components/BackButton';
 
 function Profile() {
   const [name, setName] = useState('User Name');
