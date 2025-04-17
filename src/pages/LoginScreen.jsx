@@ -1,44 +1,50 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// src/pages/LoginScreen.jsx
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LoginScreen() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Logged in with:", email, password);
-    // For now, simply navigate to the home page
-    navigate('/home');
+    // Simulate login
+    console.log("Logging in as:", username);
+    // On success:
+    navigate("/app");
   };
 
   return (
-    <div className="form-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Enter your email" 
-            required 
-          />
-        </label>
-        <label>
-          Password:
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder="Enter your password" 
-            required 
-          />
-        </label>
-        <button type="submit" className="button">Login</button>
-      </form>
+    <div className="home-page">
+      <div className="page-content">
+        <h2 className="page-header">Login</h2>
+        <form onSubmit={handleSubmit} className="form">
+          <label>
+            Username:
+            <input
+              type="text"
+              value={username}
+              placeholder="Enter username"
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type="password"
+              value={password}
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit" className="submit-button">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

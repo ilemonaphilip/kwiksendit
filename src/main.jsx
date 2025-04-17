@@ -2,14 +2,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import { TransactionProvider } from "./contexts/TransactionContext";
+import App from "./App.jsx";
+import { TransactionProvider } from "./contexts/TransactionContext.jsx"; // <-- make sure this actually exists
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/kwiksendit">
-      {/* Provide the transaction context to the entire app */}
+    <BrowserRouter basename="/kwiksendit/">
       <TransactionProvider>
         <App />
       </TransactionProvider>

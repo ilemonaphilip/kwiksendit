@@ -1,4 +1,4 @@
-/* ---------- Global Reset & Base Styles ---------- */
+/* ---------- Global Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -6,26 +6,25 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* Ensure you include the Google Fonts link in index.html */
+  font-family: 'Inter', sans-serif;
   background-color: #f0f2f5;
 }
 
-/* ---------- Layout & Main Containers ---------- */
+/* ---------- Container ---------- */
 .home-page {
-  max-width: 420px;       /* For a mobile-like width */
+  max-width: 420px;
   margin: 0 auto;
   background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
 .content-container,
 .page-content {
   padding: 16px;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header for /app pages ---------- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,16 +33,14 @@ body {
   color: #fff;
   padding: 12px 16px;
 }
-
 .logo {
   font-size: 20px;
   font-weight: bold;
+  color: #fff;
 }
-
 .profile-link {
   text-decoration: none;
 }
-
 .profile-pic {
   width: 40px;
   height: 40px;
@@ -52,87 +49,82 @@ body {
   cursor: pointer;
 }
 
-/* ---------- Typography ---------- */
-.page-header {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+/* ---------- Hero Section (HomePage at /app) ---------- */
+.hero-section {
+  text-align: center;
+  padding: 16px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: #fff;
+  border-radius: 8px;
 }
-
-.intro-text {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 30px;
+.hero-section h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
 }
-
-.section-title {
+.hero-section .balance {
   font-size: 18px;
-  margin-bottom: 16px;
-  color: #333;
 }
 
-/* ---------- Tiles (Feature Cards) ---------- */
-/* (Used on HomePage if applicable) */
-.tiles {
+/* ---------- Tiles on HomePage ---------- */
+.features {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
   margin-bottom: 30px;
 }
-
 @media (min-width: 600px) {
-  .tiles {
+  .features {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-.tile {
+.feature-tile {
   background-color: #f8f9fa;
   padding: 16px;
   border-radius: 8px;
   text-decoration: none;
   color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
 }
-
-.tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+.feature-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
-
-.tile-title {
-  font-size: 16px;
-  font-weight: 600;
+.icon-wrapper {
+  font-size: 32px;
   margin-bottom: 8px;
 }
+.feature-tile h4 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.feature-tile p {
+  font-size: 14px;
+  color: #666;
+}
 
-/* ---------- Form Styles ---------- */
+/* ---------- Form ---------- */
 .form {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 16px;
 }
-
 .form label {
   font-size: 14px;
   color: #333;
   display: flex;
   flex-direction: column;
 }
-
-.form input,
-.form select {
+.form input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 4px;
   font-size: 14px;
 }
-
-/* Submit Button */
 .submit-button {
   background-color: #007bff;
   color: #fff;
@@ -141,10 +133,9 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s, transform 0.2s;
   margin-top: 12px;
 }
-
 .submit-button:hover {
   background-color: #0056b3;
   transform: translateY(-2px);
@@ -158,23 +149,11 @@ body {
   margin-bottom: 16px;
   display: inline-block;
 }
-
 .back-button:hover {
   text-decoration: underline;
 }
 
-/* ---------- Messages ---------- */
-.error {
-  color: #dc3545;
-  font-size: 13px;
-}
-
-.success-message {
-  color: #28a745;
-  font-size: 13px;
-}
-
-/* ---------- Filter Input (for Transactions) ---------- */
+/* ---------- Filter Input (Transactions) ---------- */
 .filter-input {
   padding: 8px;
   width: 100%;
@@ -187,16 +166,14 @@ body {
 /* ---------- Transactions Table & Container ---------- */
 .transactions-container {
   width: 100%;
-  overflow-x: auto;  /* Enable horizontal scrolling */
+  overflow-x: auto;
 }
-
 .transactions-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
-  min-width: 600px;  /* Force a minimum width so the table can scroll */
+  min-width: 600px;
 }
-
 .transactions-table th,
 .transactions-table td {
   padding: 8px;
@@ -204,7 +181,6 @@ body {
   text-align: left;
   white-space: nowrap;
 }
-
 .transactions-table th {
   background-color: #f8f9fa;
 }

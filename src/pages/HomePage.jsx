@@ -1,36 +1,42 @@
+// src/pages/HomePage.jsx
 import React from "react";
 import { NavLink } from "react-router-dom";
 
 function HomePage() {
-  // In a real app, these would come from authentication and account data
   const username = "Philip";
-  const balance = "NGN 20,000";
+  const balance = "NGN 21,385,421.15";
 
   return (
     <>
-      <h2 className="page-header">Welcome, {username}!</h2>
-      <p className="intro-text">
-        Your account balance is <strong>{balance}</strong>.
-      </p>
-      <h3 className="section-title">Features</h3>
-      <div className="tiles">
-        <NavLink to="/send-money" className="tile">
-          <h4 className="tile-title">Send Money</h4>
-          <p>Transfer funds instantly at competitive exchange rates.</p>
+      {/* A hero section at the top */}
+      <section className="hero-section">
+        <h2>Welcome, {username}!</h2>
+        <p className="balance">Your Balance: <strong>{balance}</strong></p>
+      </section>
+
+      {/* Feature Tiles */}
+      <section className="features">
+        <NavLink to="/app/send-money" className="feature-tile">
+          <div className="icon-wrapper">💸</div>
+          <h4>Send Money</h4>
+          <p>Transfer funds instantly.</p>
         </NavLink>
-        <NavLink to="/transactions" className="tile">
-          <h4 className="tile-title">Transaction History</h4>
-          <p>View your past transfers and track your transactions.</p>
+        <NavLink to="/app/transactions" className="feature-tile">
+          <div className="icon-wrapper">📜</div>
+          <h4>Transactions</h4>
+          <p>View your history.</p>
         </NavLink>
-        <NavLink to="/exchange-rates" className="tile">
-          <h4 className="tile-title">Exchange Rates</h4>
-          <p>Check current EUR-to-Naira conversion rates.</p>
+        <NavLink to="/app/exchange-rates" className="feature-tile">
+          <div className="icon-wrapper">💱</div>
+          <h4>Exchange Rates</h4>
+          <p>Check current rates.</p>
         </NavLink>
-        <NavLink to="/profile" className="tile">
-          <h4 className="tile-title">Profile Settings</h4>
-          <p>Manage your profile and security settings.</p>
+        <NavLink to="/app/profile" className="feature-tile">
+          <div className="icon-wrapper">👤</div>
+          <h4>Profile Settings</h4>
+          <p>Manage your account.</p>
         </NavLink>
-      </div>
+      </section>
     </>
   );
 }
