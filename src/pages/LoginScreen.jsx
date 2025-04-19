@@ -1,17 +1,20 @@
 // src/pages/LoginScreen.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function LoginScreen() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate login
+    // Simulate authentication and store user info in context
+    login(username, "NGN 21,385,421.15"); // Replace balance as needed
     console.log("Logging in as:", username);
-    // On success:
+    // On successful login, navigate to the protected app area
     navigate("/app");
   };
 

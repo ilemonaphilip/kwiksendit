@@ -54,7 +54,7 @@ function Transactions() {
                   <td>{tx.date || "----"}</td>
                   <td>
                     <Link
-                      to={`/transactions/${tx.id}`}
+                      to={`/app/transactions/${tx.id}`}
                       style={{ color: "#007bff", textDecoration: "underline" }}
                     >
                       {tx.id}
